@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="stylesheet" href="style/homepage_style.css"></link>
+        <link rel="stylesheet" href="style/calc_style.css"></link>
+
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <title>Hjemmeside</title>
+
+    </head>
+    <body>
+        <header id="header">
+            <div class="container flex">
+                <div class="logo_wrapper">
+                    <img src="images/icons/logo.svg" alt="logo" class="logo" >
+                    <h1>Acture</h1>
+                </div>
+                    
+                    <div class="hamburger" id="hamburger">
+                    <div class="hamburger_line"></div>
+                    <div class="hamburger_line"></div>
+                    <div class="hamburger_line"></div>
+                    </div>
+                    <ul class="nav-ul" id="nav-ul">
+                        <li><a href="#">Hjem</a></li>
+                        <li><a href="price.html">Tjenester</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Priskalkulator</a></li>
+                        <li class="kontakt_list"><a href="#">Kontakt oss</a></li>
+                    </ul>
+                    <ul class="nav-ul">
+                        <li class="kontakt">  
+                            <a href="#"> Kontakt oss</a> 
+                        </li> 
+                    </ul>
+            </div>   
+        </header>
+        <section>
+            <div class="calculator_container">
+                <h1 class="title">Priskalkulator</h1>
+                <div class="calculator_wrapper">
+                    <div class="the_calculator">
+                        <div class="calculator_section">
+                            <div class="top_text">
+                                <div class="more_info">
+                                    <h3>Hva slags webapplikasjon ønsker du</h3>
+                                    <img src="./images/icons/help_circle.svg" id="more_info">
+                                </div>
+                            </div>
+                            <div id="top_text_info">
+                                <p>- <b class="bold-color">En statisk nettside</b> er en enkel type nettside som består av faste sider med HTML, CSS og muligens JavaScript-kode. Inneholdet på sidene endres ikke, med mindre noen manuelt redigerer koden. Statiske nettsider egner seg best for små, informative nettsteder uten behov for dynamisk innhold eller interaksjon med brukerne. </p>
+                                <br>
+                                <p>- <b class="bold-color"> En interaktiv webside </b> er en side der brukeren selv kan påvirke innholdet.  Dynamiske nettsider gir mer interaktivitet og muligheter for personlig tilpasning enn statiske nettsider, og de er derfor ofte brukt til å lage nettsteder med komplekst innhold, slik som sosiale medier, e-handel og online tjenester.</p>
+                                <br>
+                                <p>- <b class="bold-color">En fullstack nettside</b> er en type nettside som gir en komplett brukeropplevelse ved å kombinere frontend og backend teknologier. Frontenden tar seg av det du ser på skjermen, slik som design og interaksjon med brukeren. Backenden tar seg av det som skjer bak kulissene, slik som lagring av data og utførelse av logikk.</p>
+                           <br>
+                            </div>
+                            <div class="calc_type">
+                                <input type="radio" name="section_1" value="one" id="btn_1_1"><label for="btn_1_1">Statisk</label>
+                                <input type="radio" name="section_1" value="one" id="btn_1_2"><label for="btn_1_2">Interaktiv</label>
+                                <input type="radio" name="section_1" value="one" id="btn_1_3"><label for="btn_1_3">FullStack</label>
+                            </div>
+                        </div>
+                        <div class="calculator_section">
+                            <div class="domain">
+                                <div class="top_text">
+                                    <h3>Har du allerede kjøpt domene?</h3>
+                                </div>
+                                <div class="calc_btn_2">
+                                    <input type="radio" name="section_2" value="one" id="btn_2_1"><label for="btn_2_1">Ja</label>
+                                    <br>
+                                    <input type="radio" name="section_2" value="one" id="btn_2_2"><label for="btn_2_2">Nei</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator_section">
+                            <div class="calc_pages">
+                                <div class="pages_amount">
+                                    <h3>Velg antall sider</h3>
+                                    <span id="demo" class="output">0</span>
+                                </div>
+                                <input type="range" min="1" max="8" value="1" class="slider" id="myRange">
+                            </div>
+                        </div>
+                        <div class="calculator_section">
+                            <div class="calc_design">
+                                <div class="top_text">
+                                    <div class="more_info">
+                                        <h3>Design nivå</h3>
+                                        <img src="./images/icons/help_circle.svg" id="more_info2">
+                                    </div>
+                                </div>
+                                <div id="design_info">
+                                    <p>-<b class="bold-color">Lavt</b> design på siden betyr at vi bruker lite visuelle effekter, som SVG'er, ikke animasjoner. Alt blir statisk.</p>
+                                    <br>
+                                    <p>-<b class="bold-color">Middels</b> design vil gi deg mer unikt og kreativt design, bruk av spesielle utforminger og kreative bakgrunner.</p>
+                                    <br>
+                                    <p>-<b class="bold-color">Høyt</b> nivå inkluderer alt fra middels, men du vil også få gode animasjoner som gir liv til siden.</p>
+                                    <br>
+                                    </p>
+                                </div>
+                                <div class="calc_type">
+                                    <input type="radio" name="section_3" value="one" id="btn_3_1"><label for="btn_3_1">Lav</label>
+                                    <input type="radio" name="section_3" value="one" id="btn_3_2"><label for="btn_3_2">Middels</label>
+                                    <input type="radio" name="section_3" value="one" id="btn_3_3"><label for="btn_3_3">Høy</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator_section">
+                            <div class="top_text"><h3>Innhold</h3>
+                                <p>Vet du hva som skal stå på siden eller trenger du hjelp?</p></div>
+                            <div class="calc_btn_2">
+                                <input type="radio" name="section_4" value="one" id="btn_4_1"><label for="btn_4_1">Ja</label>
+                                <br>
+                                <input type="radio" name="section_4" value="one" id="btn_4_2"><label for="btn_4_2">Nei</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result_bar">
+                        
+                        <div class="results">
+                            <div class="payment_type"></div>
+                            <div class="estimate_price">
+                            <p>ESTIMERT PRIS: </p>
+                            kr <span id="final_result" class="final_price">0</span>
+                        </div>
+                        <button class="default_button_reverse" style="color: var(--theme-color);">Gå videre</button>
+                        <a href="#">Se prisfordeling </a>
+                        </div>
+                        <div class="info">
+                            <p>
+                                Vi har estimert prisen din basert på dine valg. Prisen inkluderer mva, men pris kan varieres dersom spesifike ønsker blir lagt til i tillegg som vil legge ekstra tid på arbeidet. <br>
+                                <br>  Rabatten for årlig betaling gjelder for alle sider indikert på denne siden. <br>
+                                Ved månedlig betalingsmetode, kan også prisen endres ved spesielle ønsker, som tilsvarer lovt rabatt iforhold til fast pris på siden
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="top_footer">
+                <div class="footer_logo">
+                    <h1>Acture</h1>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_items">
+                        <a href="#">Hjem</a>
+                        <a href="">Tjenester</a>
+                        <a href="">FAQ</a>
+                        <a href="">Priskalkulator</a>
+                    </div>
+                    <div class="footer_seperator"></div>
+                    <div class="footer_items">
+                        <p>info@acture.com</p>
+                        <p>+47 123 45 678</p>
+                    </div>
+                    <div class="footer_seperator"></div>
+                    <div class="footer_items">
+                        <p>Informasjonskapsler</p>
+                        <p>Personvern</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer_linebreak">
+            <div class="bottom_footer">
+                <div class="bottom_footer_wrapper">
+                    <div class="footer_socials">
+                        <img src="./images/icons/footer_icons/instagram.svg">
+                        <img src="./images/icons/footer_icons/linkedin.svg">
+                        <img src="./images/icons/footer_icons/facebook.svg"> 
+                    </div>
+                    <div class="footer_copyright">Copyright. All rights reserved.</div>
+                </div>
+            </div>
+        </footer>
+
+<script>
+
+</script>
+
+    
+    </body>
+    <script src="./js/calculator.js"></script>
+</html>

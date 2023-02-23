@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/dashboard.css">
+</head>
+<body>
+    <div id="message_wrapper"></div>
+    <div id="activeMessages"></div>
+    <div id="activeCustomers"></div>
+    <button onclick="logOut()">Logg ut</button>
+    <div id="employee_wrapper"></div>
+    <input type="text" id="email">
+    <input type="text" id="firstName">
+    <input type="text" id="lastName">
+    <input type="password" id="pwd">
+    <button onclick="regEmployee()">Registrer bruker</button>
+    <span id="error"></span>
+    <button onclick="checkID()">Trykk</button>
+    <span id="employeeID">ID:</span>
+    <div id="profile">
+        <div id="showProfile">
+            <h1>Profil</h1>
+            <img id="profilePFP" src="/getPfp" alt="Profile picture">
+            <span role="button" onclick="toggleEditPFP()">Rediger profilbilde</span>
+            <form id="updatePFP">
+                <input type="file" id="pfpFile" name="pfpFile" accept="image/*" />
+                <input type="hidden" id="fileTypeInput" name="fileType" />
+                <button id="uploadPFP" type="button" onclick="updatePFP()">Upload Image</button>
+                <span id="errorUpdatePfp" style="color: red"></span>
+            </form>
+            <div class="profile_item">
+                <label for='profileID'>ID: </label>
+                <input type='text' id='profileID' disabled>
+            </div>
+            <div class="profile_item">
+                <label for='profileEmail'>Email : </label>
+                <input type='text' id="profileEmail" disabled>
+            </div>
+            <div class="profile_item">
+                <label for='profileFirstName'> Fornavn : </label>
+                <input type='text' id='profileFirstName' disabled>
+            </div>
+            <div class="profile_item">
+                <label for='profileLastName'> Etternavn : </label>
+                <input type='text' id='profileLastName' disabled>
+            </div>
+            <div class="profile_item">
+                <label for='profileHired'> Ansettelsesdato : </label>
+                <input type='text' id='profileHired' disabled>
+            </div>
+            <div class="profile_item" id="togglePwdField">
+                <label for='profilePwd'> Passord : </label>
+                <input type='password' id='profilePwd' disabled>
+                <span id="toggleEditPwd" role="button" onclick="enableEditPwd()" style="color: #3035A6">Rediger passord</span>
+            </div>
+            <button id="editProfileBtn" onclick="enableEditing()">Rediger profil</button>
+        </div>
+        <div id="changeInfo">
+            <h1>Profil</h1>
+            <div class="profile_item">
+                <label for='updateID'>ID: </label>
+                <input type='text' id='updateID' disabled>
+            </div>
+            <div class="profile_item">
+                <label for='updateEmail'>Email: </label>
+                <input type='text' id="updateEmail">
+                <span style="color: #3035A6" id="badEmail"></span>
+            </div>
+            <div class="profile_item">
+                <label for='updateFirstName'>Fornavn: </label>
+                <input type='text' id='updateFirstName'>
+                <span id="badFirstname" style="color: #3035A6"></span>
+            </div>
+            <div class="profile_item">
+                <label for='updateLastName'>Etternavn: </label>
+                <input type='text' id='updateLastName'>
+                <span id="badLastname" style="color: #3035A6"></span>
+            </div>
+            <div class="profile_item">
+                <label for='updateHired'>Ansettelsesdato: </label>
+                <input type='text' id='updateHired' disabled>
+                <span id="badHireDate" style="color: #3035A6"></span>
+            </div>
+            <div class="profile_item">
+                <label for='profilePwd'>Passord: </label>
+                <input type='password' disabled>
+            </div>
+            <button id="confirmChangesBtn" onclick="updateInfo()">Lagre endringer</button>
+        </div>
+        <div id="changePwd">
+            <div class="profile_item">
+                <label for='updatePwd'>Passord: </label>
+                <input type='password' id='updatePwd' placeholder="Gammelt passord">
+                <span id="badOldPwd" style="color: #3035A6"></span>
+            </div>
+            <div class="profile_item">
+                <label for='newPwd'>Nytt passord: </label>
+                <input type='password' id='newPwd' placeholder="Nytt passord">
+                <span style="color: #3035A6" id="badPwd"></span>
+            </div>
+            <div class="profile_item">
+                <label for='repeatPwd'>Gjennta passord: </label>
+                <input type='password' id='repeatPwd' placeholder="Gjennta passord">
+                <span style="color: #3035A6" id="badRepeatPwd"></span>
+            </div>
+            <button id="changePwdBtn" onclick="updatePwd()">Lagre passord</button>
+        </div>
+    </div>
+    <div id="messageArchive"></div>
+</body>
+<script src="js/dashboard.js"></script>
+</html>
