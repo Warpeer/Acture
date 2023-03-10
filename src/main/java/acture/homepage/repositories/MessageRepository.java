@@ -26,9 +26,9 @@ public class MessageRepository {
     private Logger logger = LoggerFactory.getLogger(MessageRepository.class);
 
     public boolean saveMessage(ContactMessage message){
-        String sql = "INSERT INTO ContactMessage (fullName, email, message) VALUES(?,?,?)";
+        String sql = "INSERT INTO ContactMessage (fullName, email, message, messageStatus) VALUES(?,?,?,?)";
         try{
-            db.update(sql, message.getFullName(), message.getEmail(), message.getMessage());
+            db.update(sql, message.getFullName(), message.getEmail(), message.getMessage(), "unhandled");
             return true;
         }catch(Exception error){
             logger.error("Error in saveMessage: " + error);

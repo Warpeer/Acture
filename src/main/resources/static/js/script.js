@@ -104,3 +104,23 @@ function regMessage(){
         updateContactForm();
     });
 }
+
+function toHomepage(){
+    window.location.href = "../index.html";
+}
+function toCalculator(){
+    window.location.href = "../price.html";
+}
+function updateContactForm(){
+    $('#formToHide').hide();
+    $('#formSubmissionText').css('display', 'flex');
+}
+
+
+function goToServices(){
+    window.location.href ="../tjenester.html";
+}
+function scrollToContact(){
+    window.location.href="../index.html";
+    document.getElementById('contact_section').scrollIntoView();
+}
