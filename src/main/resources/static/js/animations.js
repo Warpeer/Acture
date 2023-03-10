@@ -4,7 +4,15 @@ gsap.from('.slogan_content h1', { opacity: 0, duration: 1.2});
 gsap.from('.slogan_content p', { opacity: 0, duration: 1.2, delay: 0.5 });
 gsap.from('.model', { duration: 1, x: 300, stagger: 0.1, ease: "back.out(1.7)" });
 
-if($(window).width()>645){
+if($(window).width()>645 || $(window).width<2400){
+    //------------------------------------HOVEDFORSIDEN--------------------------------------------
+    gsap.from('.landingpage_content', {
+        scrollTrigger: '.landingpage_content',
+        opacity: 0,
+        duration: 0.8,
+        x: -200
+    });
+
     gsap.from('.about_column1', {
         scrollTrigger: '.about_column1',
         opacity: 0,
@@ -109,4 +117,36 @@ if($(window).width()>645){
         y:300,
         duration: 0.8
     })
+    //------------------------------------TJENESTER SIDEN--------------------------------------------
+    gsap.from('.prosesser', {
+        scrollTrigger: {
+            trigger: '.prosess-section'
+        },
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        y: 1500
+    });
+    gsap.from('.tjenester-sec', {
+        scrollTrigger: '.tjenester-sec',
+        opacity: 0,
+        duration: 0.5,
+        y: 200,
+    });
+    gsap.from('.why-card', {
+        scrollTrigger: {
+            trigger: '.why-us-cards'
+        },
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        y: 1500
+    });
+
+    gsap.from('.tjenester-content', {
+        scrollTrigger: '.tjenester-content',
+        opacity: 0,
+        duration: 0.8,
+        x: -200
+    });
 }

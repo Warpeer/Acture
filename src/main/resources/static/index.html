@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -22,7 +23,7 @@
 <body>
     <header id="header">
         <div class="container flex">
-            <div class="logo_wrapper">
+            <div class="logo_wrapper" onclick="toHomepage()">
                 <img src="./images/icons/logo.svg" alt="logo" class="logo" >
                 <h1>Acture</h1>
             </div>
@@ -33,15 +34,13 @@
                 <div class="hamburger_line"></div>
                 </div>
                 <ul class="nav-ul" id="nav-ul">
-                    <li><a href="#">Hjem</a></li>
-                    <li><a href="price.html">Tjenester</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Priskalkulator</a></li>
-                    <li class="kontakt_list"><a href="#">Kontakt oss</a></li>
+                    <li><a href="#" class="active">Hjem</a></li>
+                    <li><a href="tjenester.html">Tjenester</a></li>
+                    <li><a href="price.html">Priskalkulator</a></li>
                 </ul>
                 <ul class="nav-ul">
                     <li class="kontakt">  
-                        <a href="#"> Kontakt oss</a> 
+                        <button class="a_kontakt default_button" onClick="document.getElementById('contact_section').scrollIntoView();">Kontakt oss</button>
                     </li> 
                 </ul>
         </div>   
@@ -78,6 +77,7 @@
                     <div class="about_img2">
                         <img src="./images/slideshow_images/office1.png">
                     </div>
+
                     <div class="about_text2 main_color">
                         <h1 class="title">Hva vi kan hjelpe deg med</h1>
                         <p class="paragraph_color">Vi tilbyr en rekke tjenester som er alt fra koding, utvikling, og lansering.La oss hjelpe deg med å skape det perfekte digitalt ansiktet til din
@@ -91,19 +91,19 @@
         <section class="gallery">
             <div class="gallery_container">
                 <div class="gallery_wrapper">
-                    <div class="service_card" id="vedlikehold">
+                    <div class="service_card" id="vedlikehold"onclick="goToServices();">
                         <img src="./images/icons/maintance.svg">
                         <p>Vedlikehold</p>
                     </div>
-                    <div class="service_card" id="utvikling">
+                    <div class="service_card" id="utvikling" onclick="goToServices();">
                         <img src="./images/icons/terminal.svg">
                         <p>Utvikling</p>
                     </div>
-                    <div class="service_card" id="database">
+                    <div class="service_card" id="database" onclick="goToServices();">
                         <img src="./images/icons/database.svg">
                         <p>Lagring i skyen</p>
                     </div>
-                    <div class="service_card" id="design">
+                    <div class="service_card" id="design" onclick="goToServices();">
                         <img src="./images/icons/design.svg">
                         <p>Design</p>
                     </div>
@@ -119,103 +119,120 @@
                     Vår prosess
                 </h1>
             </div>
+            <!--
+            <div class="timelime_dots_container">
+                <img src="./images/slideshow_images/dot2.svg" id="dot1">
+                <img src="./images/slideshow_images/dot2.svg" id="dot2">
+                <img src="./images/slideshow_images/dot2.svg" id="dot3">
+                <img src="./images/slideshow_images/dot2.svg" id="dot4">
+            </div>
+            -->
             <img src="./images/slideshow_images/starter_dot1.svg" class="timeline_dot" id="starter_dot">
-            <img src="./images/slideshow_images/dot3.svg" class="timeline_dot" id="dot1">
-            <img src="./images/slideshow_images/dot3.svg" class="timeline_dot" id="dot2">
-            <img src="./images/slideshow_images/dot3.svg" class="timeline_dot" id="dot3">
-            <img src="./images/slideshow_images/dot3.svg" class="timeline_dot" id="dot4">
-            <div class="timeline_item" id="timeline_item_1">
-                <div class="timeline_title expand_timeline_item">
-                    <h1 class="main_color">
-                        <span class="timeline_indeks">1.</span>  Planlegging.
-                    </h1>
-                    <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info">
+            <div class="timelime_items_container">
+                <div class="timeline_item" id="timeline_item_1">
+                    <img src="./images/slideshow_images/dot2.svg" class="timeline_item_dot">
+                    <div class="timeline_title expand_timeline_item">
+                        <h1 class="main_color">
+                            <span class="timeline_indeks">1.</span>  Planlegging.
+                        </h1>
+                        <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info">
+                    </div>
+                    <div class="timeline_desc" id="timeline_desc_1">
+                        <p class="paragraph_color">
+                            Vi vil planlegge prosjektet med deg slik at du for en komplett idé om hvordan siden skal formatteres. Dette gjøres slik at sjansene for at du som kunde ikke blir fornlyd, blir minimal.
+                            Dersom du heller ønsker at vi skal ta av oss all planlegging, er det også mulighet for dette, men da må du være klar over at du ikke vil ha like mye kontroll over
+                            prosjektet enn ellers.
+                        </p>
+                    </div>
                 </div>
-                <div class="timeline_desc" id="timeline_desc_1">
-                    <p class="paragraph_color">
-                        Vi vil planlegge prosjektet med deg slik at du for en komplett idé om hvordan siden skal formatteres. Dette gjøres slik at sjansene for at du som kunde ikke blir fornlyd, blir minimal.
-                        Dersom du heller ønsker at vi skal ta av oss all planlegging, er det også mulighet for dette, men da må du være klar over at du ikke vil ha like mye kontroll over
-                        prosjektet enn ellers.
-                    </p>
-                </div>
-            </div>
 
-            <div class="timeline_item swiper_slide" id="timeline_item_2">
-                <div class="timeline_title expand_timeline_item">
-                    <h1 class="main_color">
-                        <span class="timeline_indeks">2.</span> Utvikling.
-                    </h1>
-                    <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info2">
+                <div class="timeline_item" id="timeline_item_2">
+                    <img src="./images/slideshow_images/dot2.svg" class="timeline_item_dot">
+                    <div class="timeline_title expand_timeline_item">
+                        <h1 class="main_color">
+                            <span class="timeline_indeks">2.</span> Utvikling.
+                        </h1>
+                        <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info2">
+                    </div>
+                    <div class="timeline_desc" id="timeline_desc_2">
+                        <p class="paragraph_color">
+                            Når planleggingen er ferdig setter teamet vårt i gang med utvikling. Vi benytter oss av de nyeste teknologiene, de mest moderne rammeverkene for å gjøre siden så
+                            skreddersydd for din smak som mulig. Vi velger hva som vil passe best etter dine behov og budsjett.
+                        </p>
+                        <div class="tools_wrapper">
+                            <div class="tools">
+                                <img src="./images/icons/timeline_icons/html.svg" alt="">
+                                <p>HTML</p>
+                            </div>
+                            <div class="tools">
+                                <img src="./images/icons/timeline_icons/css.svg" alt="">
+                                <p>
+                                    CSS
+                                </p>
+                            </div>
+                            <div class="tools">
+                                <img src="./images/icons/timeline_icons/js.svg" alt="">
+                                <p>Javacript</p>
+                            </div>
+                            <div class="tools"><img src="./images/icons/timeline_icons/springapi.svg" alt="">
+                                <p>Spring RestAPI</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline_desc" id="timeline_desc_2">
-                    <p class="paragraph_color">
-                        Når planleggingen er ferdig setter teamet vårt i gang med utvikling. Vi benytter oss av de nyeste teknologiene, de mest moderne rammeverkene for å gjøre siden så
-                        skreddersydd for din smak som mulig. Vi velger hva som vil passe best etter dine behov og budsjett.
-                    </p>
-                    <div class="tools_wrapper">
-                        <div class="tools">
-                            <img src="./images/icons/timeline_icons/html.svg" alt="">
-                            <p>HTML</p>
+
+                <div class="timeline_item" id="timeline_item_3">
+                    <img src="./images/slideshow_images/dot2.svg" class="timeline_item_dot">
+                    <div class="timeline_title expand_timeline_item">
+                        <h1 class="main_color">
+                            <span class="timeline_indeks">3.</span> Revisjoner
+                        </h1>
+                        <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info3">
+                    </div>
+                    <div class="timeline_desc" id="timeline_desc_3">
+                        <p class="paragraph_color">
+                            Faller ikke siden i smak? Frykt ikke, du har nemlig et uendelig antall revisjoner; du gir prosjektet tilbakemelding og vi tilpasser siden etter kritikken.
+                            Slik kan vi garantere at du vil få noe du er 100% fornøyd med. Vi gir oss ikke dersom kunden ikke er tilfredsstilt!.
+                        </p>
+                        <div class="timeline_revision main_color">
+                            <div class="revision_item">
+                                <p><span class="alternativ_color">Uendelig</span> revisjoner</p>
+                            </div>
+                            <div class="revision_seperator"></div>
+                            <div class="revision_item">
+                                <p>Garantert <span class="alternativ_color">tilfredstillelse</span></p>
+                            </div>
+                            <div class="revision_seperator"></div>
+                            <div class="revision_item">
+                                <p>Vi jobber til <span class="alternativ_color">du</span> er førnøyd</p>
+                            </div>
                         </div>
-                        <div class="tools">
-                            <img src="./images/icons/timeline_icons/css.svg" alt="">
-                            <p>
-                                CSS
-                            </p>
-                        </div>
-                        <div class="tools">
-                            <img src="./images/icons/timeline_icons/js.svg" alt="">
-                            <p>Javacript</p>
-                        </div>
-                        <div class="tools"><img src="./images/icons/timeline_icons/springapi.svg" alt="">
-                            <p>Spring RestAPI</p>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline_item swiper_slide" id="timeline_item_4">
+                    <img src="./images/slideshow_images/dot2.svg" class="timeline_item_dot">
+                    <div class="timeline_title expand_timeline_item">
+                        <h1 class="main_color">
+                            <span class="timeline_indeks">4.</span> Lansering
+                        </h1>
+                        <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info4">
+                    </div>
+                    <div class="timeline_desc" id="timeline_desc_4">
+                        <p class="paragraph_color">
+                            Alle nettsider trenger et sted å bo. Når utviklingen er ferdig, og kunden har validert alt, vil vi ta hånd om en webhost for deg. Altså, vi vil være med deg hele veien
+                            fra fødselen av siden, til den er oppe å kjører på internettet.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline_item" id="timeline_item_3">
-                <div class="timeline_title expand_timeline_item">
-                    <h1 class="main_color">
-                        <span class="timeline_indeks">3.</span> Revisjoner
-                    </h1>
-                    <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info3">
-                </div>
-                <div class="timeline_desc" id="timeline_desc_3">
-                    <p class="paragraph_color">
-                        Faller ikke siden i smak? Frykt ikke, du har nemlig et uendelig antall revisjoner; du gir prosjektet tilbakemelding og vi tilpasser siden etter kritikken.
-                        Slik kan vi garantere at du vil få noe du er 100% fornøyd med. Vi gir oss ikke dersom kunden ikke er tilfredsstilt!.
-                    </p>
-                    <div class="timeline_revision main_color">
-                        <div class="revision_item">
-                            <p><span class="alternativ_color">Uendelig</span> revisjoner</p>
-                        </div>
-                        <div class="revision_seperator"></div>
-                        <div class="revision_item">
-                            <p>Garantert <span class="alternativ_color">tilfredstillelse</span></p>
-                        </div>
-                        <div class="revision_seperator"></div>
-                        <div class="revision_item">
-                            <p>Vi jobber til <span class="alternativ_color">du</span> er førnøyd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="timeline_item swiper_slide" id="timeline_item_4">
-                <div class="timeline_title expand_timeline_item">
-                    <h1 class="main_color">
-                       <span class="timeline_indeks">4.</span> Lansering
-                    </h1>
-                    <img src="./images/icons/timeline_icons/read_more.svg" id="tl_more_info4">
-                </div>
-                <div class="timeline_desc" id="timeline_desc_4">
-                    <p class="paragraph_color">
-                        Alle nettsider trenger et sted å bo. Når utviklingen er ferdig, og kunden har validert alt, vil vi ta hånd om en webhost for deg. Altså, vi vil være med deg hele veien
-                        fra fødselen av siden, til den er oppe å kjører på internettet.
-                    </p>
-                </div>
-            </div>
+
+
+
+
+
         </section>
         <section class="calc_wrapper">
             <div class="calc_img">
@@ -223,36 +240,38 @@
             <div class="calc_content">
                 <div class="calc_text">
                     <h1 class="title">Prøv vår <span class="alternativ_color">Priskalkulator</span></h1>
-                    <p>
+                    <p class="paragraph_color">
                         Lyst på en litt mer skreddersydd idé om hva nettsiden din vil koste? Klikk deg gjennom vår priskalkulator å få et prisestimat på siden som passer ditt behov!
                     </p>
                 </div>
-                <img src="./images/icons/next.svg" class="calc_next">
+                <img src="./images/icons/next.svg" class="calc_next" role="button" onclick="toCalculator()">
             </div>
         </section>
       
        
-        <section class="contact_section">
+        <section class="contact_section" id="contact_section">
             <div class="contact_wrapper">
-                <div class="contact_container">
+                <span id="formSubmissionText">Takk for din henveneldse. Vi tar kontakt så fort som mulig!</span>
+                <div class="contact_container" id="formToHide">
                     <div class="calc_top_text">
                         <h1 class="title main_color">Kontakt oss da vel!</h1>
                         <p class="contact_subheader">Vi vil gjerne høre fra <span class="alternativ_color">deg!</span></p>
                     </div>
+
                     <div class="input-container">
                         <div class="small_input_wrapper">
                             <div class="styled-input">
-                                <input type="text" id="fullName" required/>
+                                <input class="paragraph_color" type="text" id="fullName" required/>
                                 <label>Ditt navn</label> 
                             </div>
                             <div class="styled-input">
-                                <input type="text" id="email" required />
+                                <input class="paragraph_color" type="text" id="email" required />
                                 <label>Din epost</label> 
                             </div>
                         </div>
                         
                         <div class="styled-input wide">
-                            <textarea required id="message"></textarea>
+                            <textarea class="paragraph_color" required id="message"></textarea>
                             <label>Din henvendelse</label>
                         </div>
                     </div>

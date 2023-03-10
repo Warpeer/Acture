@@ -9,13 +9,13 @@ output.innerHTML = slider.value; // Display the default slider value
 
 $('#more_info').click(()=>{
     let div = $('#top_text_info');
-    if(div.css("display")== "none"){
+    if(div.css("display")=== "none"){
         div.show("fast");
     }else div.hide("fast");
 });
 $('#more_info2').click(()=>{
     let div = $('#design_info');
-    if(div.css("display")== "none"){
+    if(div.css("display")=== "none"){
         div.show("fast");
     }else div.hide("fast");
 });
@@ -120,73 +120,8 @@ function calculatePrice(){
         outputElement.html(price);
 }
 
-
-
-
-
- 
-
-const body = document.body; 
-
-let lastScroll = 0; 
-
-window.addEventListener("scroll", () => { 
-
-    const currentScroll = window.pageYOffset; 
-    
-    if (currentScroll <= 0) { 
-    
-    body.classList.remove("scroll-up"); 
-    
-    return; 
-    
-    } 
-
-
-if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) { 
-
-body.classList.remove("scroll-up"); 
-
-body.classList.add("scroll-down"); 
-
-} else if ( 
-
-currentScroll < lastScroll && 
-
-body.classList.contains("scroll-down") 
-
-) { 
-
-body.classList.remove("scroll-down"); 
-
-body.classList.add("scroll-up"); 
-
-} 
-
-lastScroll = currentScroll; 
-
-}); 
-
-function updateBackground(){
-    const background = $('')
+function toHomepage(){
+    window.location.href = "../index.html";
 }
-
-
-
-const hamburger = document.getElementById('hamburger');
-const hamburgers = document.getElementsByClassName('hamburger_line');
-const navUL = document.getElementById('nav-ul');
-const header = document.getElementById('header');
-
-hamburger.addEventListener('click', ()=>{
-    navUL.classList.toggle('show');
-    header.classList.toggle('bg');
-    if(header.hasClass('bg')){
-        for(let i = 0; i<hamburgers.length; i++){
-            hamburgers[i].style.backgroundColor="#3035a6";
-        }
-    }
-})
-
 
 

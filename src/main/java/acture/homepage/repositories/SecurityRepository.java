@@ -28,6 +28,8 @@ public class SecurityRepository {
 
     private Security sec = new Security();
 
+
+    //email=' DROP TABLE Employees
     public int logIn(String email, String pwd){
         String sqlUser = "SELECT * FROM Employee WHERE email = ?";
         try{

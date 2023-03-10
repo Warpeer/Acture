@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link href="/style/tjenester/swiperjs.css" rel="stylesheet">
+    <link href="/style/tjenester/tjenester.css" rel="stylesheet">
+    <link href="/style/homepage_style.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-sR63/L3Slqn0OWMMafv7gmRGxkYJOcfgdN3jznwea9NYiett6R+cGdZ0t0TRHeH1gZogMyLE1oQpQ0Lc6ULKbg=="
+            referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js">
+    </script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+<header id="header">
+    <div class="container flex">
+        <div class="logo_wrapper" onclick="toHomepage()">
+            <img alt="logo" class="logo" src="./images/icons/logo.svg">
+            <h1>Acture</h1>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+            <div class="hamburger_line"></div>
+        </div>
+        <ul class="nav-ul" id="nav-ul">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a class="active" href="tjenester.html">Tjenester</a></li>
+            <li><a href="price.html">Priskalkulator</a></li>
+        </ul>
+        <ul class="nav-ul">
+            <li class="kontakt">
+                <button class="a_kontakt default_button"
+                        onClick="document.getElementById('contact_section').scrollIntoView();">Kontakt oss
+                </button>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="tjenester-section">
+    <div class="tjenester-bg"></div>
+    <div class="tjenester-content">
+        <div class="tjenester-title">
+            <h1 class="title">Tjenestene vi tilbyr deg</h1>
+            <p class="paragraph_color">Vi tilbyr en rekke tjenester. Det er muligheter å bestille flere tjenester i ett,
+                eller bare velge én, alt utifra hva som passer din bedrift best.</p>
+            <div class="priskalkis">Prøv vår priskalkulator!</div>
+        </div>
+    </div>
+</div>
+<section class="tjenester-sec">
+    <div class="tjenester-card-title">
+        <h4 class="sub_title">Våre tjenester</h4>
+        <h1 class="title">Vi utvikler skreddersydde systemer for deg
+            og din bedrift</h1>
+    </div>
+
+
+    <section class="swiper-section">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="flex-card">
+
+                        <div class="flex-card__text">
+                            <h4 class="sub_title">Design</h4>
+                            <h2>Design</h2>
+                            <div class="flex-card__image responsive_img" id="my-swiper-slide-1"></div>
+                            <p class="paragraph_color">
+                                <strong>Consequat trust fund</strong> narwhal beard gochujang neutra id, sint pabst
+                                taxidermy pitchfork. Tempor ipsum bicycle rights, ut artisan poutine viral small
+                                batch slow-carb kitsch freegan cred dreamcatcher direct trade id.
+                                <br><span class="les-mer-btn" onclick="showMore1()" role="button">Les mer</span>
+                                <span class="les-mer" id="tjenester-lesmer1"> <br>
+                                    Ut plaid bicycle rights aesthetic polaroid lyft lomo health goth direct
+                                    trade lumbersexual echo park. Post-ironic shabby chic cupidatat truffaut occaecat
+                                    cred, voluptate vaporware pitchfork pok pok consequat mustache kickstarter squid
+                                    heirloom. Paleo helvetica umami mumblecore duis, wolf aliquip consectetur plaid enim
+                                    subway tile.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex-card__image" id="my-swiper-slide-1"></div>
+                    </div>
+                </div> <!-- end swiper-slide -->
+                <div class="swiper-slide">
+                    <div class="flex-card">
+
+                        <div class="flex-card__text">
+                            <h4 class="sub_title">Support</h4>
+                            <h2>Support</h2>
+                            <div class="flex-card__image responsive_img" id="my-swiper-slide-2"></div>
+                            <p>
+                                <strong>Unicorn food truck</strong> slow-carb knausgaard migas. Enim blog literally,
+                                nostrud sriracha unicorn et coloring book fingerstache jean shorts meh deep v viral
+                                next level.
+                                <br>
+                                <span class="les-mer-btn" onclick="showMore2()" role="button">Les mer</span>
+                                <span class="les-mer" id="tjenester-lesmer2"> <br>
+                                    Ut plaid bicycle rights aesthetic polaroid lyft lomo health goth direct
+                                    trade lumbersexual echo park. Post-ironic shabby chic cupidatat truffaut occaecat
+                                    cred, voluptate vaporware pitchfork pok pok consequat mustache kickstarter squid
+                                    heirloom. Paleo helvetica umami mumblecore duis, wolf aliquip consectetur plaid enim
+                                    subway tile.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex-card__image" id="my-swiper-slide-2"></div>
+                    </div>
+                </div> <!-- end swiper-slide -->
+                <div class="swiper-slide">
+                    <div class="flex-card">
+
+                        <div class="flex-card__text">
+                            <h4 class="sub_title">Vedlikehold</h4>
+                            <h2>Vedlikehold</h2>
+                            <div class="flex-card__image responsive_img" id="my-swiper-slide-3"></div>
+                            <p>
+                                <strong>Adaptogen pabst incididunt</strong>, flexitarian ut veniam pop-up selfies
+                                everyday carry ennui lo-fi keytar est gluten-free celiac. Meggings la croix food
+                                truck culpa pop-up austin succulents wolf.
+                                <br>
+                                <span class="les-mer-btn" onclick="showMore3()" role="button">Les mer</span>
+                                <span class="les-mer" id="tjenester-lesmer3"> <br>
+                                    Ut plaid bicycle rights aesthetic polaroid lyft lomo health goth direct
+                                    trade lumbersexual echo park. Post-ironic shabby chic cupidatat truffaut occaecat
+                                    cred, voluptate vaporware pitchfork pok pok consequat mustache kickstarter squid
+                                    heirloom. Paleo helvetica umami mumblecore duis, wolf aliquip consectetur plaid enim
+                                    subway tile.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex-card__image" id="my-swiper-slide-3"></div>
+                    </div>
+                </div> <!-- end swiper-slide -->
+                <div class="swiper-slide">
+                    <div class="flex-card">
+
+                        <div class="flex-card__text">
+
+                            <h4 class="sub_title">Database</h4>
+                            <h2>Database</h2>
+                            <div class="flex-card__image responsive_img" id="my-swiper-slide-4"></div>
+                            <p>
+                                <strong>Hashtag</strong> eu roof party magna heirloom craft beer, aesthetic tacos
+                                direct trade hoodie in et beard. Snackwave ennui YOLO beard ethical tattooed. Retro
+                                laborum food truck photo booth.
+                                <br>
+                                <span class="les-mer-btn" onclick="showMore4()" role="button">Les mer</span>
+                                <span class="les-mer" id="tjenester-lesmer4"> <br>
+                                    Ut plaid bicycle rights aesthetic polaroid lyft lomo health goth direct
+                                    trade lumbersexual echo park. Post-ironic shabby chic cupidatat truffaut occaecat
+                                    cred, voluptate vaporware pitchfork pok pok consequat mustache kickstarter squid
+                                    heirloom. Paleo helvetica umami mumblecore duis, wolf aliquip consectetur plaid enim
+                                    subway tile.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex-card__image" id="my-swiper-slide-4"></div>
+                    </div>
+                </div> <!-- end swiper-slide -->
+
+            </div> <!-- end swiper-wrapper -->
+
+
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+
+
+        </div> <!-- end swiper-container -->
+        <div class="pagination-div">
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+</section>
+<div class="prosess-wrapper">
+
+    <div class="prosess-title">
+        <h1 class="title">Fra start til slutt</h1>
+    </div>
+    <div class="prosess-section">
+        <div class="prosesser">
+            <div class="prosess-innhold">
+                <h3><span class="nummerfarge">1</span> Konsultasjon</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Curabitur in dolor et libero
+                    tempor ultricies.</p>
+
+            </div>
+        </div>
+        <div class="prosesser">
+            <div class="prosess-innhold">
+                <h3><span class="nummerfarge">2</span> Tilbud</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Curabitur in dolor et libero
+                    tempor ultricies.</p>
+
+            </div>
+        </div>
+        <div class="prosesser">
+            <div class="prosess-innhold">
+                <h3><span class="nummerfarge">3</span> Oppstart</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Curabitur in dolor et libero
+                    tempor ultricies.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="oss-wrapper">
+    <div class="oss">
+        <h1 class="title">Hvorfor velge <span class="bold-name">Acture?</span></h1>
+        <p>We create custom, user-friendly websites that drive
+            traffic and convert visitors. Contact us today and take
+            your online presence to the next level.</p>
+    </div>
+    <div class="why-us">
+        <div class="why-us-cards">
+            <div class="why-card">
+                <h3><span class="bold-name">24/7</span> Support</h3>
+                <p>Vi er tilgjenglig ved alle spørsmål du skulle hatt
+                    og er klare til å løse problemer dersom det skulle oppstå</p>
+            </div>
+            <div class="why-us-border"></div>
+            <div class="why-card">
+                <h3><span class="bold-name">Sikre</span> nettsider</h3>
+                <p>Vi er tilgjenglig ved alle spørsmål du skulle hatt
+                    og er klare til å løse problemer dersom det skulle oppstå</p>
+            </div>
+            <div class="why-us-border"></div>
+            <div class="why-card">
+                <h3>Søkeoptimalisert</h3>
+                <p>Vi er tilgjenglig ved alle spørsmål du skulle hatt
+                    og er klare til å løse problemer dersom det skulle oppstå</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact_section" id="contact_section">
+    <div class="contact_wrapper">
+        <span id="formSubmissionText">Takk for din henveneldse. Vi tar kontakt så fort som mulig!</span>
+        <div class="contact_container" id="formToHide">
+            <div class="calc_top_text">
+                <h1 class="title main_color">Kontakt oss da vel!</h1>
+                <p class="contact_subheader">Vi vil gjerne høre fra <span class="alternativ_color">deg!</span></p>
+            </div>
+
+            <div class="input-container">
+                <div class="small_input_wrapper">
+                    <div class="styled-input">
+                        <input class="paragraph_color" id="fullName" required type="text"/>
+                        <label>Ditt navn</label>
+                    </div>
+                    <div class="styled-input">
+                        <input class="paragraph_color" id="email" required type="text"/>
+                        <label>Din epost</label>
+                    </div>
+                </div>
+
+                <div class="styled-input wide">
+                    <textarea class="paragraph_color" id="message" required></textarea>
+                    <label>Din henvendelse</label>
+                </div>
+            </div>
+            <div>
+                <div class="default_button" onclick="regMessage()">Send melding</div>
+            </div>
+        </div>
+        <div class="contact_illustration">
+            <div class="contact_img">
+                <img src="./images/slideshow_images/dude_smiling.png">
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="top_footer">
+        <div class="footer_logo">
+            <h1>Acture</h1>
+        </div>
+        <div class="footer_content">
+            <div class="footer_items">
+                <a href="#">Hjem</a>
+                <a href="">Tjenester</a>
+                <a href="">FAQ</a>
+                <a href="">Priskalkulator</a>
+            </div>
+            <div class="footer_seperator"></div>
+            <div class="footer_items">
+                <p>info@acture.com</p>
+                <p>+47 123 45 678</p>
+            </div>
+            <div class="footer_seperator"></div>
+            <div class="footer_items">
+                <p>Informasjonskapsler</p>
+                <p>Personvern</p>
+            </div>
+        </div>
+    </div>
+    <hr class="footer_linebreak">
+    <div class="bottom_footer">
+        <div class="bottom_footer_wrapper">
+            <div class="footer_socials">
+                <img src="/images/icons/footer_icons/instagram.svg">
+                <img src="/images/icons/footer_icons/linkedin.svg">
+                <img src="/images/icons/footer_icons/facebook.svg">
+            </div>
+            <div class="footer_copyright">Copyright. All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/tjenester/service.js"></script>
+<script src="js/animations.js"></script>
+
+
+</body>
+
+</html>

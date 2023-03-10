@@ -5,7 +5,7 @@ const body = document.body;
 let lastScroll = 0; 
 
  
- 
+
 
 window.addEventListener("scroll", () => { 
 
@@ -101,5 +101,6 @@ function regMessage(){
     };
     $.post("/saveMessage", contactMessage, ()=>{
         console.log("Lastet opp");
+        updateContactForm();
     });
 }

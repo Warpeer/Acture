@@ -60,7 +60,7 @@ function formatMessagePool(messageList) {
             "<td>" + message.email + "</td>" +
             "<td class='message'>" + message.message + "</td>" +
             "<td>" + message.received + "</td>" +
-            "<td><button onclick='claimMessage("+message.id+")'>Ta krav om melding</button></td>" +
+            "<td><button onclick='claimMessage("+message.id+")' class='claim_button'>Ta krav om melding</button></td>" +
             "</tr>"
     }
     output+="</table>";
@@ -75,7 +75,7 @@ function formatActiveMessagePool(messageList){
             "<td>" + message.email + "</td>" +
             "<td class='message'>" + message.message + "</td>" +
             "<td>" + message.received + "</td>" +
-            "<td><button onclick='addCustomerFromMessage("+message.id+")'>Legg til som kunde</button><button onclick='archiveMessage("+message.id+")'>Arkiver</button></td>"
+            "<td style='display: flex, flex-direction: row, width: fit-content'><button onclick='addCustomerFromMessage("+message.id+")' class='claim_button'>Legg til som kunde</button><button onclick='archiveMessage("+message.id+")' class='reject_button'>Arkiver</button></td>"
             "</tr>";
     }
     output+="</table>";
@@ -170,6 +170,7 @@ function formatEmployee(employeeList){
     $("#employee_wrapper").html(output);
 }
 function formatProfile(employee){
+    $('#welcomeMsg').html(employee.firstName + " " + employee.lastName + ".");
     $('#profileID').val(employee.id);
     $('#profileEmail').val(employee.email);
     $('#profileFirstName').val(employee.firstName);
@@ -190,6 +191,7 @@ function enableEditing(){
     $('#updateHired').val($('#profileHired').val());
 }
 function enableEditPwd(){
+    $('#showProfile').hide();
     $('#togglePwdField').hide();
     $('#changePwd').show();
     $('#changePwdBtn').show();
@@ -251,6 +253,7 @@ function getProfilePicture(){
 
 function toggleEditPFP(){
     $('#updatePFP').show();
+    $('#edit-picture').hide();
 
 }
 function updatePFP(){
@@ -271,6 +274,7 @@ function updatePFP(){
         success: (response)=>{
             if(response){
                 $('#updatePFP').hide();
+                $('#edit-picture').show();
                 fetchProfile();
             }else{
                 $('#errorUpdatePfp').html("Kunne ikke oppdatere bildet.")

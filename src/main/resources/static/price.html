@@ -20,28 +20,26 @@
     <body>
         <header id="header">
             <div class="container flex">
-                <div class="logo_wrapper">
-                    <img src="images/icons/logo.svg" alt="logo" class="logo" >
+                <div class="logo_wrapper" onclick="toHomepage()">
+                    <img src="images/icons/logo.svg" alt="logo" class="logo">
                     <h1>Acture</h1>
                 </div>
-                    
-                    <div class="hamburger" id="hamburger">
-                    <div class="hamburger_line"></div>
-                    <div class="hamburger_line"></div>
-                    <div class="hamburger_line"></div>
-                    </div>
-                    <ul class="nav-ul" id="nav-ul">
-                        <li><a href="#">Hjem</a></li>
-                        <li><a href="price.html">Tjenester</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Priskalkulator</a></li>
-                        <li class="kontakt_list"><a href="#">Kontakt oss</a></li>
-                    </ul>
-                    <ul class="nav-ul">
-                        <li class="kontakt">  
-                            <a href="#"> Kontakt oss</a> 
-                        </li> 
-                    </ul>
+                <div class="hamburger" id="hamburger">
+                <div class="hamburger_line"></div>
+                <div class="hamburger_line"></div>
+                <div class="hamburger_line"></div>
+                </div>
+                <ul class="nav-ul" id="nav-ul">
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="tjenester.html">Tjenester</a></li>
+                    <li><a class="active" href="price.html">Priskalkulator</a></li>
+
+                </ul>
+                <ul class="nav-ul">
+                    <li class="kontakt">
+                        <button class="a_kontakt default_button" onClick="location.href='index.html#contact_section';">Kontakt oss</button>
+                    </li>
+                </ul>
             </div>   
         </header>
         <section>
@@ -183,12 +181,8 @@
                 </div>
             </div>
         </footer>
-
-<script>
-
-</script>
-
-    
     </body>
+
     <script src="./js/calculator.js"></script>
+    <script src="./js/script.js"></script>
 </html>

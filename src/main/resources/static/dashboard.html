@@ -7,48 +7,40 @@
     <link rel="stylesheet" href="style/dashboard.css">
 </head>
 <body>
-    <div id="message_wrapper"></div>
-    <div id="activeMessages"></div>
-    <div id="activeCustomers"></div>
-    <button onclick="logOut()">Logg ut</button>
-    <div id="employee_wrapper"></div>
-    <input type="text" id="email">
-    <input type="text" id="firstName">
-    <input type="text" id="lastName">
-    <input type="password" id="pwd">
-    <button onclick="regEmployee()">Registrer bruker</button>
-    <span id="error"></span>
-    <button onclick="checkID()">Trykk</button>
-    <span id="employeeID">ID:</span>
-    <div id="profile">
-        <div id="showProfile">
-            <h1>Profil</h1>
-            <img id="profilePFP" src="/getPfp" alt="Profile picture">
-            <span role="button" onclick="toggleEditPFP()">Rediger profilbilde</span>
-            <form id="updatePFP">
+<div id="profile">
+    <h1>Hei, <span id="welcomeMsg"></span></h1>
+    <div class="profile_wrapper">
+        <div class="profile_pfp_wrapper">
+            <div class="profile-pic">
+                <img id="profilePFP" src="/getPfp" alt="Profile picture">
+            </div>
+            <form id="updatePFP" class="form">
                 <input type="file" id="pfpFile" name="pfpFile" accept="image/*" />
-                <input type="hidden" id="fileTypeInput" name="fileType" />
-                <button id="uploadPFP" type="button" onclick="updatePFP()">Upload Image</button>
+                <input type="hidden" class="default_button" id="fileTypeInput" name="fileType" />
+                <button id="uploadPFP" type="button" onclick="updatePFP()" class="default_button_reverse">Last opp bildet.</button>
                 <span id="errorUpdatePfp" style="color: red"></span>
             </form>
+            <span role="button" id="edit-picture" onclick="toggleEditPFP()">Rediger profilbilde</span>
+        </div>
+        <form class="form" id="showProfile">
             <div class="profile_item">
                 <label for='profileID'>ID: </label>
                 <input type='text' id='profileID' disabled>
             </div>
             <div class="profile_item">
-                <label for='profileEmail'>Email : </label>
+                <label for='profileEmail'>Email: </label>
                 <input type='text' id="profileEmail" disabled>
             </div>
             <div class="profile_item">
-                <label for='profileFirstName'> Fornavn : </label>
+                <label for='profileFirstName'>Fornavn: </label>
                 <input type='text' id='profileFirstName' disabled>
             </div>
             <div class="profile_item">
-                <label for='profileLastName'> Etternavn : </label>
+                <label for='profileLastName'>Etternavn: </label>
                 <input type='text' id='profileLastName' disabled>
             </div>
             <div class="profile_item">
-                <label for='profileHired'> Ansettelsesdato : </label>
+                <label for='profileHired'>Ansettelsesdato: </label>
                 <input type='text' id='profileHired' disabled>
             </div>
             <div class="profile_item" id="togglePwdField">
@@ -56,10 +48,10 @@
                 <input type='password' id='profilePwd' disabled>
                 <span id="toggleEditPwd" role="button" onclick="enableEditPwd()" style="color: #3035A6">Rediger passord</span>
             </div>
-            <button id="editProfileBtn" onclick="enableEditing()">Rediger profil</button>
-        </div>
-        <div id="changeInfo">
-            <h1>Profil</h1>
+            <button id="editProfileBtn" class="default_button" type="button" onclick="enableEditing()">Rediger profil</button>
+            <button onclick="logOut()" class="default_button_reverse" id="logOutBtn">Logg ut</button>
+        </form>
+        <form class="form" id="changeInfo">
             <div class="profile_item">
                 <label for='updateID'>ID: </label>
                 <input type='text' id='updateID' disabled>
@@ -88,9 +80,9 @@
                 <label for='profilePwd'>Passord: </label>
                 <input type='password' disabled>
             </div>
-            <button id="confirmChangesBtn" onclick="updateInfo()">Lagre endringer</button>
-        </div>
-        <div id="changePwd">
+            <button id="confirmChangesBtn"  type="button" onclick="updateInfo()" class="default_button">Lagre endringer</button>
+        </form>
+        <form class="form" id="changePwd">
             <div class="profile_item">
                 <label for='updatePwd'>Passord: </label>
                 <input type='password' id='updatePwd' placeholder="Gammelt passord">
@@ -107,9 +99,32 @@
                 <span style="color: #3035A6" id="badRepeatPwd"></span>
             </div>
             <button id="changePwdBtn" onclick="updatePwd()">Lagre passord</button>
-        </div>
+        </form>
     </div>
-    <div id="messageArchive"></div>
+</div>
+    <div class="top_section">
+        <div id="message_wrapper"></div>
+        <div id="activeCustomers"></div>
+    </div>
+    <div class="middle_section">
+        <div id="activeMessages"></div>
+    </div>
+    <div class="middle_section">
+        <div id="messageArchive"></div>
+    </div>
+    <div>
+        <div id="employee_wrapper"></div>
+    </div>
+    <form>
+        <input type="text" id="email">
+        <input type="text" id="firstName">
+        <input type="text" id="lastName">
+        <input type="password" id="pwd">
+        <button onclick="regEmployee()">Registrer bruker</button>
+        <span id="error"></span>
+    </form>
+    <button onclick="checkID()">Trykk</button>
+    <span id="employeeID">ID:</span>
 </body>
 <script src="js/dashboard.js"></script>
 </html>
